@@ -36,19 +36,43 @@ function cerrarCaja() {
 
 <template>
 	<div>
-		<div class="grid grid-col-3">
-			<div class="flex">
-				<Boton class="bg-blue-700" @click="ticketHombre">Hombre</Boton>
+		<div class="flex justify-center pt-16">
+			<div>
+				<Boton class="bg-blue-700 hover:bg-blue-900" @click="ticketHombre"
+					>Hombre</Boton
+				>
+				<div class="flex justify-center pt-2">
+					<BotonS class="hover:bg-blue-900">2</BotonS>
+					<BotonS class="hover:bg-blue-900">3</BotonS>
+					<BotonS class="hover:bg-blue-900">4</BotonS>
+					<BotonS class="hover:bg-blue-900">5</BotonS>
+				</div>
 			</div>
 			<div>
-				<Boton class="bg-purple-700" @click="ticketMujer">Mujer</Boton>
+				<Boton class="bg-purple-700 hover:bg-purple-900" @click="ticketMujer"
+					>Mujer</Boton
+				>
+				<div class="flex justify-center pt-2">
+					<BotonS class="bg-purple-700 hover:bg-purple-900">2</BotonS>
+					<BotonS class="bg-purple-700 hover:bg-purple-900">3</BotonS>
+					<BotonS class="bg-purple-700 hover:bg-purple-900">4</BotonS>
+					<BotonS class="bg-purple-700 hover:bg-purple-900">5</BotonS>
+				</div>
 			</div>
 			<div>
-				<Boton class="bg-teal-700" @click="ticketBinario">No Binario</Boton>
+				<Boton class="bg-teal-700 hover:bg-teal-900" @click="ticketBinario"
+					>No Binario</Boton
+				>
+				<div class="flex justify-center pt-2">
+					<BotonS class="bg-teal-700 hover:bg-teal-900">2</BotonS>
+					<BotonS class="bg-teal-700 hover:bg-teal-900">3</BotonS>
+					<BotonS class="bg-teal-700 hover:bg-teal-900">4</BotonS>
+					<BotonS class="bg-teal-700 hover:bg-teal-900">5</BotonS>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div>
-		<Boton class="bg-yellow-700" @click="cerrarCaja">Cerrar caja</Boton>
+	<div class="flex justify-center pt-32">
+		<Boton class="bg-red-700" @click="cerrarCaja">Cerrar caja</Boton>
 	</div>
 </template>
