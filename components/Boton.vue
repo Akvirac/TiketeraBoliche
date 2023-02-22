@@ -4,12 +4,17 @@ defineProps({
 		type: String,
 		default: 'button',
 	},
+	size: {
+		type: String,
+		default: 'regular',
+	},
 })
 </script>
 
 <template>
 	<button
-		class="text-white text-3xl focus:ring-4 rounded-full p-12 p-2.5 text-center inline-flex items-center mr-2 p-16"
+		:class="[[size == 'small' && 'p-8']]"
+		class="w-fit text-white text-2xl focus:ring-4 rounded-lg text-center inline-flex items-center mr-2 p-12"
 		:type="type"
 	>
 		<slot />

@@ -1,28 +1,25 @@
 <script setup>
 //Declaracion de variables.
-var hNum = 0
-var mNum = 0
-var bNum = 0
-var vTicket = 0
+
+//Bandera tipo entrada
+let tipoEntrada = 0
+//Bandera para Numero de tickets.
+let cantidadTicket = 0
+let hNum = 0
+let mNum = 0
+let bNum = 0
 
 const totalNoche = ref([])
 //Funciones
 
-//Bandera para Numero de tickets.
-console.log(vTicket)
-//Contador hombres
-function ticketHombre() {
-	hNum = hNum + 1
+//imprimir ticket
+function imprimirTicket() {
+	if (tipoEntrada == 1) hNum = hNum + cantidadTicket
+	if (tipoEntrada == 2) mNum = mNum + cantidadTicket
+	if (tipoEntrada == 3) bNum = bNum + cantidadTicket
+
 	console.log(hNum)
-}
-//Contador mujeres
-function ticketMujer() {
-	mNum = mNum + 1
 	console.log(mNum)
-}
-//Contador Binario
-function ticketBinario() {
-	bNum = bNum + 1
 	console.log(bNum)
 }
 //Cerrar Caja
@@ -43,43 +40,61 @@ function cerrarCaja() {
 
 <template>
 	<div>
-		<div class="flex justify-center pt-16">
+		<div class="flex justify-center pt-16 pb-16">
 			<div>
-				<Boton class="bg-blue-700 hover:bg-blue-900" @click="valorTicket"
-					>Hombre</Boton
+				<Boton class="bg-blue-700 hover:bg-blue-900" @click="tipoEntrada = 1"
+					>Hombres</Boton
 				>
-				<div class="flex justify-center pt-2">
-					<BotonS @click="vTicket = 2" class="hover:bg-blue-900">2</BotonS>
-					<BotonS @click="valorTicket3" class="hover:bg-blue-900">3</BotonS>
-					<BotonS @click="valorTicket4" class="hover:bg-blue-900">4</BotonS>
-					<BotonS @click="valorTicket5" class="hover:bg-blue-900">5</BotonS>
-				</div>
 			</div>
 			<div>
-				<Boton class="bg-purple-700 hover:bg-purple-900" @click="ticketMujer"
-					>Mujer</Boton
+				<Boton
+					class="bg-purple-700 active:bg-purple-900"
+					@click="tipoEntrada = 2"
+					>Mujeres</Boton
 				>
-				<div class="flex justify-center pt-2">
-					<BotonS class="bg-purple-700 hover:bg-purple-900">2</BotonS>
-					<BotonS class="bg-purple-700 hover:bg-purple-900">3</BotonS>
-					<BotonS class="bg-purple-700 hover:bg-purple-900">4</BotonS>
-					<BotonS class="bg-purple-700 hover:bg-purple-900">5</BotonS>
-				</div>
 			</div>
 			<div>
-				<Boton class="bg-teal-700 hover:bg-teal-900" @click="ticketBinario"
-					>No Binario</Boton
+				<Boton class="bg-teal-700 hover:bg-teal-900" @click="tipoEntrada = 3"
+					>N. Binario</Boton
 				>
-				<div class="flex justify-center pt-2">
-					<BotonS class="bg-teal-700 hover:bg-teal-900">2</BotonS>
-					<BotonS class="bg-teal-700 hover:bg-teal-900">3</BotonS>
-					<BotonS class="bg-teal-700 hover:bg-teal-900">4</BotonS>
-					<BotonS class="bg-teal-700 hover:bg-teal-900">5</BotonS>
-				</div>
 			</div>
 		</div>
+		<div class="flex justify-center pt-2">
+			<Boton
+				size="small"
+				class="bg-stone-800 hover:bg-violet-900"
+				@click="cantidadTicket = 1"
+				>1</Boton
+			>
+			<Boton
+				size="small"
+				class="bg-stone-800 hover:bg-violet-900"
+				@click="cantidadTicket = 2"
+				>2</Boton
+			>
+			<Boton
+				size="small"
+				class="bg-stone-800 hover:bg-violet-900"
+				@click="cantidadTicket = 3"
+				>3</Boton
+			>
+			<Boton
+				size="small"
+				class="bg-stone-800 hover:bg-violet-900"
+				@click="cantidadTicket = 4"
+				>4</Boton
+			>
+			<Boton
+				size="small"
+				class="bg-stone-800 hover:bg-violet-900"
+				@click="cantidadTicket = 5"
+				>5</Boton
+			>
+		</div>
 	</div>
-	<div class="flex justify-center pt-32">
-		<Boton class="bg-red-700" @click="cerrarCaja">Cerrar caja</Boton>
+	<div>
+		<div class="flex justify-center pt-32">
+			<Boton class="bg-red-700 mb-2" @click="imprimirTicket">Imprimir</Boton>
+		</div>
 	</div>
 </template>
